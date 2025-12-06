@@ -1,0 +1,59 @@
+/* ============================================================
+LibreCSS - FAQ
+============================================================ */
+
+/* Wrapper */
+.lib-faq {
+	display: flex;
+	flex-direction: column;
+	gap: var(--lib-space-lg);
+}
+
+/* Item */
+.lib-faq-item {
+	border: 1px solid var(--lib-color-border-subtle);
+	border-radius: var(--lib-radius-lg);
+	background: var(--lib-color-surface);
+	padding: var(--lib-space-md) var(--lib-space-lg);
+	box-shadow: var(--lib-shadow-sm);
+	transition:
+		border-color var(--lib-transition-fast),
+		box-shadow var(--lib-transition-fast);
+}
+
+.lib-faq-item:hover,
+.lib-faq-item[open] {
+	border-color: var(--lib-color-primary);
+	box-shadow: var(--lib-shadow-md);
+}
+
+.lib-faq-item summary {
+	cursor: pointer;
+	font-size: var(--lib-text-lg);
+	font-weight: 600;
+	list-style: none;
+	outline: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.lib-faq-item summary::-webkit-details-marker {
+	display: none;
+}
+
+.lib-faq-item p {
+	margin: var(--lib-space-md) 0 0 0;
+	line-height: var(--lib-line-relaxed);
+}
+
+.lib-faq-item summary::after {
+	content: "⌄";
+	font-size: 1.25rem;
+	transform: rotate(0deg);
+	transition: transform var(--lib-transition-fast);
+}
+
+.lib-faq-item[open] summary::after {
+	transform: rotate(180deg);
+}

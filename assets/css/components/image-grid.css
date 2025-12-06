@@ -1,0 +1,56 @@
+/* ============================================================
+   LibreCSS – Image Grid
+============================================================ */
+
+.lib-image-grid {
+	display: grid;
+	gap: var(--lib-space-md);
+	grid-auto-rows: 220px;
+	grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+}
+
+/* Item */
+.lib-image-grid .item {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--lib-radius-lg);
+	cursor: pointer;
+}
+
+/* Image */
+.lib-image-grid .item img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform var(--lib-transition-normal);
+}
+
+.lib-image-grid .item:hover img {
+	transform: scale(1.05);
+}
+
+/* Spans */
+.lib-image-grid .item-wide {
+	grid-column: span 2;
+}
+
+.lib-image-grid .item-tall {
+	grid-row: span 2;
+}
+
+/* Breakpoints */
+@media (max-width: 900px) {
+	.lib-image-grid .item-wide {
+		grid-column: span 1;
+	}
+}
+
+@media (max-width: 600px) {
+	.lib-image-grid {
+		grid-auto-rows: 160px;
+	}
+
+	.lib-image-grid .item-tall {
+		grid-row: span 1;
+	}
+}

@@ -1,0 +1,68 @@
+/* ============================================================
+   LibreCSS – Pricing
+============================================================ */
+
+/* Grid */
+.lib-pricing-grid {
+	display: grid;
+	gap: var(--lib-space-xl);
+	grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+}
+
+/* Box */
+.price-box {
+	background: var(--lib-color-surface);
+	border: 1px solid var(--lib-color-border-subtle);
+	border-radius: var(--lib-radius-lg);
+	padding: var(--lib-space-lg);
+	text-align: center;
+	box-shadow: var(--lib-shadow-sm);
+	transition:
+		box-shadow var(--lib-transition-fast),
+		border-color var(--lib-transition-fast);
+}
+
+/* Hover */
+.price-box:hover {
+	box-shadow: var(--lib-shadow-md);
+	border-color: var(--lib-color-primary);
+}
+
+/* Featured Box */
+.price-box.featured {
+	border-color: var(--lib-color-primary);
+	background: var(--lib-color-primary-soft);
+	box-shadow: var(--lib-shadow-md);
+}
+
+/* Title */
+.price-box h3 {
+	margin-bottom: var(--lib-space-sm);
+}
+
+/* Price */
+.price-box .price {
+	font-size: var(--lib-text-2xl);
+	font-weight: bold;
+	margin-bottom: var(--lib-space-md);
+	color: var(--lib-color-primary-dark);
+}
+
+/* List */
+.price-box ul {
+	margin-bottom: var(--lib-space-xl);
+	padding-left: 0;
+	list-style: none;
+}
+
+.price-box ul li {
+	margin-bottom: var(--lib-space-sm);
+	color: var(--lib-color-text-muted);
+}
+
+/* Button */
+.price-box a[role="button"] {
+	display: inline-block;
+	padding: var(--lib-space-sm) var(--lib-space-xl);
+	border-radius: var(--lib-radius-md);
+}

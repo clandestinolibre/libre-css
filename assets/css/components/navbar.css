@@ -1,0 +1,125 @@
+/* ============================================================
+   LibreCSS – Navbar
+============================================================ */
+
+.lib-navbar {
+	background: var(--lib-color-surface);
+	border-bottom: 1px solid var(--lib-color-border-subtle);
+	position: sticky;
+	top: 0;
+	z-index: 50;
+}
+
+/* Navbar Inner */
+.lib-navbar-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-block: var(--lib-space-md);
+}
+
+/* Branding */
+.lib-navbar-brand {
+	display: flex;
+	align-items: center;
+	gap: var(--lib-space-sm);
+	text-decoration: none;
+	color: var(--lib-color-text);
+}
+
+.lib-navbar-logo {
+	height: 32px;
+	width: auto;
+}
+
+.lib-navbar-title {
+	font-size: var(--lib-text-lg);
+	font-weight: 600;
+}
+
+/* Menu */
+.lib-navbar-menu {
+	display: flex;
+	gap: var(--lib-space-lg);
+}
+
+.lib-navbar-menu a {
+	color: var(--lib-color-text-muted);
+	font-size: var(--lib-text-sm);
+	padding: var(--lib-space-xs) var(--lib-space-sm);
+	border-radius: var(--lib-radius-sm);
+	transition:
+		color var(--lib-transition-fast),
+		background-color var(--lib-transition-fast);
+}
+
+.lib-navbar-menu a:hover {
+	color: var(--lib-color-text);
+	background-color: var(--lib-color-surface-alt);
+}
+
+.lib-navbar-menu a.active {
+	color: var(--lib-color-primary);
+	font-weight: 600;
+}
+
+/* Mobile Toggle */
+.lib-navbar-toggle {
+	display: none;
+	flex-direction: column;
+	gap: 4px;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	background-color: var(--lib-color-bg) !important;
+}
+
+.lib-navbar-toggle:hover {
+	background-color: var(--lib-color-bg) !important;
+}
+
+.lib-navbar-toggle span {
+	width: 24px;
+	height: 2px;
+	background: var(--lib-color-text);
+	border-radius: 2px;
+}
+
+/* Scroll-Effects */
+.lib-navbar.scrolled {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+	transition:
+		box-shadow 0.3s ease,
+		padding 0.3s ease,
+		height 0.3s ease;
+}
+
+/* Navbar shrink effect */
+.lib-navbar.shrink .lib-navbar-inner {
+	padding-block: calc(var(--lib-space-sm) * 0.7);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+	.lib-navbar-toggle {
+		display: flex;
+	}
+
+	.lib-navbar-menu {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		width: 100%;
+		flex-direction: column;
+		background: var(--lib-color-surface);
+		border-bottom: 1px solid var(--lib-color-border-subtle);
+		padding: var(--lib-space-md);
+		gap: var(--lib-space-md);
+		display: none;
+	}
+
+	.lib-navbar-menu.active {
+		display: flex;
+	}
+}

@@ -1,0 +1,58 @@
+/* ============================================================
+   LibreCSS – Team
+============================================================ */
+
+/* Grid */
+.lib-team-grid {
+	display: grid;
+	gap: var(--lib-space-xl);
+	grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+}
+
+/* Team Member */
+.team-member {
+	background: var(--lib-color-surface);
+	border-radius: var(--lib-radius-lg);
+	border: 1px solid var(--lib-color-border-subtle);
+	padding: var(--lib-space-lg);
+	text-align: center;
+	box-shadow: var(--lib-shadow-sm);
+	transition: box-shadow var(--lib-transition-fast);
+}
+
+.team-member:hover {
+	box-shadow: var(--lib-shadow-md);
+}
+
+/* Image */
+.team-member img {
+	width: 100%;
+	height: auto;
+	border-radius: var(--lib-radius-full);
+	margin-bottom: var(--lib-space-md);
+	object-fit: cover;
+}
+
+/* Name */
+.team-member h3 {
+	margin-bottom: var(--lib-space-xs);
+}
+
+/* Role */
+.team-member .role {
+	font-size: var(--lib-text-sm);
+	color: var(--lib-color-text-muted);
+	margin-bottom: var(--lib-space-md);
+}
+
+/* List */
+.team-member ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color: var(--lib-color-text-muted);
+}
+
+.team-member ul li {
+	margin-bottom: var(--lib-space-xs);
+}

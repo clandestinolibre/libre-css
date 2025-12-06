@@ -1,0 +1,60 @@
+/* ============================================================
+   LibreCSS – Testimonials
+============================================================ */
+
+/* Grid */
+.lib-testimonials-grid {
+	display: grid;
+	gap: var(--lib-space-xl);
+	grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+}
+
+/* Testimonial Card */
+.lib-testimonial {
+	background: var(--lib-color-surface);
+	border-radius: var(--lib-radius-lg);
+	border: 1px solid var(--lib-color-border-subtle);
+	padding: var(--lib-space-lg);
+	box-shadow: var(--lib-shadow-sm);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* Quote */
+.lib-testimonial p {
+	margin-bottom: var(--lib-space-lg);
+	font-style: italic;
+}
+
+/* Footer */
+.lib-testimonial footer {
+	display: flex;
+	align-items: center;
+	gap: var(--lib-space-md);
+}
+
+/* Avatar */
+.lib-testimonial footer img {
+	width: 52px;
+	height: 52px;
+	border-radius: var(--lib-radius-full);
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+/* Meta */
+.lib-testimonial .meta {
+	display: flex;
+	flex-direction: column;
+}
+
+.lib-testimonial .meta .name {
+	font-weight: 600;
+	margin-bottom: var(--lib-space-2xs);
+}
+
+.lib-testimonial .meta .role {
+	font-size: var(--lib-text-sm);
+	color: var(--lib-color-text-muted);
+}

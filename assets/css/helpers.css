@@ -1,0 +1,40 @@
+/* ============================================================
+   LibreCSS – Helper Utilities
+============================================================ */
+
+.lib-text-left {
+	text-align: left;
+}
+
+.lib-text-center {
+	text-align: center;
+}
+
+.lib-text-right {
+	text-align: right;
+}
+
+.lib-text-justify {
+	text-align: justify;
+}
+
+/* Layout: Container & Section */
+
+.lib-container {
+	width: 100%;
+	max-width: var(--lib-max-width);
+	margin-inline: auto;
+	padding-inline: var(--lib-container-padding-x);
+}
+
+.lib-section {
+	padding-block: var(--lib-space-2xl);
+}
+
+/* Global Responsive Grid */
+
+.lib-grid {
+	display: grid;
+	gap: var(--lib-space-xl);
+	grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+}

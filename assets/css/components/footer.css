@@ -1,0 +1,45 @@
+/* ============================================================
+   LibreCSS – Footer
+============================================================ */
+
+/* Base */
+.lib-footer {
+	padding-block: var(--lib-space-xl);
+	border-top: 1px solid var(--lib-color-border-subtle);
+	background: var(--lib-color-surface);
+}
+
+/* Dark Version */
+.lib-footer-dark {
+	background: #111;
+	color: #fff;
+}
+
+.lib-footer-dark a {
+	color: #fff;
+	text-decoration: none;
+	transition: opacity var(--lib-transition-fast);
+}
+
+.lib-footer-dark a:hover {
+	opacity: 0.8;
+}
+
+/* Layout */
+.lib-footer-inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+/* Text */
+.lib-footer small {
+	font-size: var(--lib-text-sm);
+}
+
+/* Light footer links */
+.lib-footer small a {
+	color: var(--lib-color-bg);
+	text-decoration: none;
+}

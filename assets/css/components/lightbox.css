@@ -1,0 +1,68 @@
+/* ============================================================
+   LibreCSS – Lightbox
+============================================================ */
+
+.lib-lightbox {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.85);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: var(--lib-space-xl);
+	z-index: 200;
+}
+
+.lib-lightbox.active {
+	display: flex;
+}
+
+/* Image */
+.lib-lightbox-image {
+	max-width: 90vw;
+	max-height: 90vh;
+	border-radius: var(--lib-radius-lg);
+	box-shadow: var(--lib-shadow-md);
+}
+
+/* Buttons */
+.lib-lightbox-close,
+.lib-lightbox-prev,
+.lib-lightbox-next {
+	position: absolute;
+	background: none;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	padding: var(--lib-space-xs);
+	font-size: 2rem;
+	line-height: 1;
+}
+
+/* Close */
+.lib-lightbox-close {
+	top: var(--lib-space-lg);
+	right: var(--lib-space-lg);
+}
+
+/* Previous / Next */
+.lib-lightbox-prev,
+.lib-lightbox-next {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.lib-lightbox-prev {
+	left: var(--lib-space-xl);
+}
+
+.lib-lightbox-next {
+	right: var(--lib-space-xl);
+}
+
+/* Hover */
+.lib-lightbox-close:hover,
+.lib-lightbox-prev:hover,
+.lib-lightbox-next:hover {
+	color: var(--lib-color-primary);
+}

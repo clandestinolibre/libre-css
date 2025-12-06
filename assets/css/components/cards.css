@@ -1,0 +1,42 @@
+/* ============================================================
+   LibreCSS – Cards
+============================================================ */
+
+/* Grid-Wrapper */
+.lib-cards-grid {
+	display: grid;
+	gap: var(--lib-space-xl);
+	grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+}
+
+/* Card */
+.lib-card {
+	background: var(--lib-color-surface);
+	border: 1px solid var(--lib-color-border-subtle);
+	border-radius: var(--lib-radius-lg);
+	padding: var(--lib-space-lg);
+	box-shadow: var(--lib-shadow-sm);
+	transition: box-shadow var(--lib-transition-fast);
+}
+
+.lib-card:hover {
+	box-shadow: var(--lib-shadow-md);
+}
+
+/* Image */
+.lib-card img {
+	width: 100%;
+	border-radius: var(--lib-radius-md);
+	margin-bottom: var(--lib-space-md);
+}
+
+/* Title */
+.lib-card h3 {
+	margin-bottom: var(--lib-space-sm);
+	color: var(--lib-color-text);
+}
+
+/* Text */
+.lib-card p {
+	margin: 0;
+}

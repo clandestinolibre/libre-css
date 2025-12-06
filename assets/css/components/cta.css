@@ -1,0 +1,50 @@
+/* ============================================================
+   LibreCSS – CTA
+============================================================ */
+
+.lib-cta {
+	padding-block: var(--lib-space-2xl);
+	background: var(--lib-color-primary);
+	color: var(--lib-color-primary-contrast);
+	text-align: center;
+	border-radius: var(--lib-radius-lg);
+	box-shadow: var(--lib-shadow-md);
+}
+
+/* Title */
+.lib-cta h2 {
+	margin-bottom: var(--lib-space-md);
+	color: var(--lib-color-primary-contrast);
+}
+
+/* Text */
+.lib-cta p {
+	margin-bottom: var(--lib-space-xl);
+	color: var(--lib-color-primary-contrast);
+}
+
+/* Button */
+.lib-cta a[role="button"] {
+	background: var(--lib-color-primary-contrast);
+	color: var(--lib-color-primary);
+	padding: var(--lib-space-sm) var(--lib-space-xl);
+	border-radius: var(--lib-radius-md);
+	text-decoration: none;
+	transition:
+		background-color var(--lib-transition-fast),
+		box-shadow var(--lib-transition-fast),
+		color var(--lib-transition-fast);
+}
+
+.lib-cta a[role="button"]:hover {
+	background: var(--lib-color-surface);
+	color: var(--lib-color-primary-dark);
+	box-shadow: var(--lib-shadow-sm);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+	.lib-cta {
+		padding-block: var(--lib-space-xl);
+	}
+}

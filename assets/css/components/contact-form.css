@@ -1,0 +1,66 @@
+/* ============================================================
+   LibreCSS – Contact Form
+============================================================ */
+
+/* Container */
+.lib-contact {
+	display: flex;
+	flex-direction: column;
+	gap: var(--lib-space-xl);
+	width: 100%;
+}
+
+/* Fields */
+.lib-contact-field {
+	display: flex;
+	flex-direction: column;
+	gap: var(--lib-space-xs);
+}
+
+/* Error Text */
+.lib-contact-error {
+	display: none;
+	color: var(--lib-color-danger);
+	font-size: var(--lib-text-sm);
+}
+
+/* Success */
+.lib-contact-success {
+	display: none;
+	color: var(--lib-color-primary);
+	font-weight: 600;
+	margin-top: var(--lib-space-md);
+}
+
+/* Checkbox */
+.lib-checkbox {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: var(--lib-space-sm);
+	cursor: pointer;
+	font-size: var(--lib-text-sm);
+	color: var(--lib-color-text-muted);
+	width: 100%;
+}
+
+.lib-checkbox input[type="checkbox"] {
+	margin-top: var(--lib-space-xs);
+	flex-shrink: 0;
+}
+
+.lib-checkbox span {
+	line-height: var(--lib-line-normal);
+}
+
+/* Submit-Button */
+#cf-submit {
+	align-self: flex-start;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+	#cf-submit {
+		width: 100%;
+	}
+}

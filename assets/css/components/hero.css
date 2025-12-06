@@ -1,0 +1,65 @@
+/* ============================================================
+   LibreCSS – Hero
+============================================================ */
+
+.lib-hero {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: var(--lib-hero-image);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: var(--lib-color-primary-contrast);
+}
+
+.lib-hero-overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.45);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--lib-space-xl);
+}
+
+.lib-hero-inner {
+	position: relative;
+	text-align: center;
+	max-width: 48rem;
+}
+
+.lib-hero-inner h1 {
+	color: #fff;
+	margin-bottom: var(--lib-space-xl);
+}
+
+.lib-hero-inner a[role="button"] {
+	background: var(--lib-color-primary);
+	color: var(--lib-color-primary-contrast);
+	padding: var(--lib-space-sm) var(--lib-space-xl);
+	border-radius: var(--lib-radius-md);
+	text-decoration: none;
+	font-size: var(--lib-text-md);
+	transition:
+		background-color var(--lib-transition-fast),
+		box-shadow var(--lib-transition-fast);
+}
+
+.lib-hero-inner a[role="button"]:hover {
+	background: var(--lib-color-primary-strong);
+	box-shadow: var(--lib-shadow-sm);
+}
+
+@media (max-width: 720px) {
+	.lib-hero {
+		min-height: 100vh;
+	}
+
+	.lib-hero-inner h1 {
+		font-size: var(--lib-text-2xl);
+	}
+}

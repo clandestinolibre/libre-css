@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/base.css" />
+	<link rel="stylesheet" href="assets/css/helpers.css" />
+	<link rel="stylesheet" href="assets/css/components/navbar.css" />
+	<link rel="stylesheet" href="assets/css/components/footer.css" />
+	<link rel="stylesheet" href="assets/css/components/hero.css" />
+	<link rel="stylesheet" href="assets/css/components/contact-form.css" />
+	<link rel="icon" type="image/x-icon" href="assets/img/favicon/librecss-favicon.ico" />
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/librecss-favicon-32.png" />
+	<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon/librecss-favicon-512.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/librecss-favicon-180.png" />
+	<title>LibreCSS</title>
+</head>
+
+<body>
+	<header class="lib-navbar">
+		<div class="lib-container lib-navbar-inner">
+			<a href="index.html" class="lib-navbar-brand">
+				<img src="assets/img/default/logo.svg" alt="Logo" class="lib-navbar-logo" />
+				<span class="lib-navbar-title">LibreCSS</span>
+			</a>
+
+			<button class="lib-navbar-toggle" aria-label="Navigation öffnen">
+				<span></span><span></span><span></span>
+			</button>
+
+			<nav class="lib-navbar-menu">
+				<a href="images.html">Images</a>
+				<a href="components.html">Components</a>
+			</nav>
+		</div>
+	</header>
+	<section class="lib-hero" data-component="hero" style="
+                --lib-hero-image: url(&quot;/assets/img/default/hero.jpg&quot;);
+            ">
+		<div class="lib-hero-overlay">
+			<div class="lib-hero-inner">
+				<h1>Willkommen auf unserer Website</h1>
+				<a role="button" href="#welcome">Mehr erfahren</a>
+			</div>
+		</div>
+	</section>
+	<main class="lib-container">
+		<section class="lib-section" id="welcome">
+			<h2 class="lib-text-center">Headline</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipiscing elit.
+				Consectetur adipiscing elit quisque faucibus ex sapien
+				vitae. Ex sapien vitae pellentesque sem placerat in id.
+				Placerat in id cursus mi pretium tellus duis. Pretium tellus
+				duis convallis tempus leo eu aenean.
+			</p>
+		</section>
+		<section class="lib-section">
+			<div class="lib-grid">
+				<div>
+					<h2>Headline</h2>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipiscing
+						elit. Consectetur adipiscing elit quisque faucibus
+						ex sapien vitae. Ex sapien vitae pellentesque sem
+						placerat in id. Placerat in id cursus mi pretium
+						tellus duis. Pretium tellus duis convallis tempus
+						leo eu aenean.
+					</p>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipiscing
+						elit. Consectetur adipiscing elit quisque faucibus
+						ex sapien vitae. Ex sapien vitae pellentesque sem
+						placerat in id. Placerat in id cursus mi pretium
+						tellus duis. Pretium tellus duis convallis tempus
+						leo eu aenean.
+					</p>
+				</div>
+				<div>
+					<img src="assets/img/gallery/img1.png" alt="Beispielbild" />
+				</div>
+			</div>
+		</section>
+		<section class="lib-section">
+			<div class="lib-grid">
+				<div>
+					<h3 class="lib-text-center">Komponente A</h3>
+					<p>Ein modulares UI-Element…</p>
+				</div>
+				<div>
+					<h3 class="lib-text-center">Komponente B</h3>
+					<p>Perfekt für Medien…</p>
+				</div>
+				<div>
+					<h3 class="lib-text-center">Komponente C</h3>
+					<p>Leicht erweiterbar…</p>
+				</div>
+			</div>
+		</section>
+		<section id="contact" class="lib-section">
+			<div class="lib-container">
+				<h2 class="lib-text-center">Kontakt</h2>
+				<form id="contactForm" class="lib-contact">
+					<div class="lib-contact-field">
+						<label for="cf-name">Name</label>
+						<input type="text" id="cf-name" name="name" placeholder="Ihr Name"
+							required />
+						<small class="lib-contact-error"></small>
+					</div>
+					<div class="lib-contact-field">
+						<label for="cf-email">E-Mail-Adresse</label>
+						<input type="email" id="cf-email" name="email"
+							placeholder="Ihre E-Mail-Adresse" required />
+						<small class="lib-contact-error"></small>
+					</div>
+					<div class="lib-contact-field">
+						<label for="cf-phone">Telefonnummer</label>
+						<input type="tel" id="cf-phone" name="phone"
+							placeholder="Ihre Telefonnummer" />
+						<small class="lib-contact-error"></small>
+					</div>
+					<div class="lib-contact-field">
+						<label for="cf-message">Ihre Nachricht</label>
+						<textarea id="cf-message" name="message" placeholder="Ihre Nachricht..."
+							required></textarea>
+						<small class="lib-contact-error"></small>
+					</div>
+					<div class="cf-turnstile" data-sitekey="0x4AAAAAABLeu9nY3_uSgj6o"></div>
+					<small class="lib-contact-error"></small>
+					<label class="lib-checkbox">
+						<input type="checkbox" id="cf-privacy" name="privacy" required />
+						<span>Ich habe die
+							<a href="/datenschutz.html"
+								target="_blank">Datenschutzerklärung</a>
+							gelesen und akzeptiere sie.</span>
+					</label>
+					<button type="submit" id="cf-submit">
+						Nachricht senden
+					</button>
+					<p class="lib-contact-success" id="cf-success">
+						Ihre Nachricht wurde erfolgreich gesendet.
+					</p>
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer class="lib-footer lib-footer-dark">
+		<div class="lib-container lib-footer-inner">
+			<small>
+				© 2025 LibreCSS ·
+				<a href="/imprint.html">Imprint</a> ·
+				<a href="/dataprivacy.html">Data Privacy</a>
+			</small>
+		</div>
+	</footer>
+	<script type="module" src="assets/js/loader.js"></script>
+	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</body>
+
+</html>
