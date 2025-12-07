@@ -1,98 +1,89 @@
 # LibreCSS
 
-A minimal, token-based CSS framework for modern, maintainable user interfaces. LibreCSS focuses on clarity, consistency, and long-term stability — without utility overload or external dependencies.
+LibreCSS is a **lightweight website template** designed to help you build modern websites quickly — without build tools, frameworks, or external dependencies.
+
+It combines:
+
+- a **component-based CSS framework**
+- a **small JavaScript utility library** for common browser features
+- **ready-to-use HTML templates**
+- a **simple PHP-based mailer** for the contact form
+
+Everything is designed to be minimal, predictable, and easy to extend.
+
+---
 
 ## Philosophy
 
-- **Minimal by design** – only what is truly useful
-- **Token-first** – spacing, colors, typography are centrally defined
-- **Component-oriented** – styles are encapsulated per component
-- **Offline-ready** – local fonts, no CDN or third-party assets
-- **Predictable** – no magic, no side effects
+- Lightweight by default – no build step required  
+- Component-based CSS framework  
+- Small JavaScript library for essential browser features  
+- Ready-to-use HTML templates  
+- Offline-ready (local fonts, no CDNs)  
+- Predictable behavior, no magic  
 
-## Project Structure
+---
 
-```
-assets/
-  css/
-    base.css            # Design tokens, reset, globals
-    helpers.css         # Small, intentional helpers
-    components/
-      navbar.css
-      hero.css
-      cards.css
-      cta.css
-      faq.css
-      features.css
-      pricing.css
-      team.css
-      testimonials.css
-      image-grid.css
-      lightbox.css
-      contact-form.css
-  fonts/
-    LiberationSans-*.ttf
-    LiberationMono-*.ttf
-  js/
-  	loader.js
-  	components/
-  		contact-form.js
-  		lightbox.js
-  		navbar.js
-```
+## CSS Framework
 
-## Base Layer (base.css)
+LibreCSS ships with a **small, token-based CSS framework**.
 
-The base layer defines the system foundation:
+---
+
+### Base Layer (`base.css`)
+
+The base layer defines:
 
 - Design tokens (`:root`)
 - CSS reset
 - Typography defaults
-- Forms & buttons
+- Forms and buttons
 - Core layout primitives
 
-### Typography
+---
 
-LibreCSS ships with **local fonts only**:
+#### Typography
 
-- **Sans-serif:** Liberation Sans
-- **Monospace:** Liberation Mono
+LibreCSS uses **local fonts only**:
 
-```
+- **Sans-serif:** Liberation Sans  
+- **Monospace:** Liberation Mono  
+
+```css
 body {
   font-family: var(--lib-font-sans);
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--lib-font-mono);
 }
 ```
 
-## Helpers (helpers.css)
+---
 
-Helpers are intentionally kept **very small**.
-They exist only when they remove real duplication.
+### Helpers (`helpers.css`)
 
-Currently included:
+Helpers are intentionally kept **very small** and are only added when they remove real duplication.
+
+Currently included helpers:
 
 - `.lib-text-left`
 - `.lib-text-center`
 - `.lib-text-right`
 - `.lib-text-justify`
 
-> New helpers should only be added when multiple components require the same rule.
+---
 
-***
-
-## Layout Primitives
+### Layout Primitives
 
 - `.lib-container` – max-width layout container
-- `.lib-section` – vertical rhythm for page sections
+- `.lib-section` – vertical spacing between sections
 - `.lib-grid` – responsive auto-fit grid
 
-These primitives are reused across all components.
+These primitives are reused across all templates and components.
 
-***
+---
 
 ## Components
 
@@ -100,12 +91,12 @@ Each component:
 
 - Is fully encapsulated
 - Uses design tokens only
-- Does not override global styles unnecessarily
-- Avoids new helpers unless strictly required
+- Avoids unnecessary overrides
+- Does not rely on JavaScript unless required
 
 ### Example: Cards
 
-```
+```html
 <div class="lib-cards-grid">
   <div class="lib-card">
     <img src="image.png" alt="" />
@@ -115,82 +106,104 @@ Each component:
 </div>
 ```
 
-## JavaScript Guidelines
+---
 
-LibreCSS keeps JavaScript **optional and minimal**. CSS is always responsible for layout and visuals.
-JavaScript only adds behavior where necessary.
+## JavaScript Library
 
-General rules:
+LibreCSS includes a **small JavaScript library** for essential browser features.
+JavaScript is optional and only used where needed.
+
+---
+
+### General Rules
 
 - Progressive enhancement
 - No inline styles
 - Stable, CSS-first class names
-- JS never controls layout or spacing
+- JavaScript controls behavior, not layout
 
-## JavaScript Components
-
-Only a small set of components ship with JavaScript. Each script is standalone and can be included only when needed.
+---
 
 ### Navbar (`navbar.js`)
 
-Purpose:
+**Purpose**
 
 - Mobile menu toggle
 - Scroll-based state handling
 
-Behavior:
+**Behavior**
 
-- Toggles `.active` on the menu for mobile navigation
-- Adds `.scrolled` and `.shrink` classes based on scroll position
+- Toggles `.active` on mobile navigation
+- Adds `.scrolled` / `.shrink` classes based on scroll position
 
-Requirements:
-
-- `.lib-navbar`
-- `.lib-navbar-toggle`
-- `.lib-navbar-menu`
+---
 
 ### Lightbox (`lightbox.js`)
 
-Purpose:
+**Purpose**
 
-- Image preview overlay
+- Fullscreen image preview
 
-Behavior:
+**Behavior**
 
-- Opens images in a fullscreen overlay
-- Supports next/previous navigation
-- Keyboard support (ESC, arrows)
+- Opens images in an overlay
+- Previous / next navigation
+- Keyboard support (ESC, arrow keys)
 - Click on backdrop closes the lightbox
 
-Requirements:
-
-- `.lib-lightbox`
-- `.lib-lightbox-image`
-- `.lib-lightbox-prev`, `.lib-lightbox-next`, `.lib-lightbox-close`
+---
 
 ### Contact Form (`contact-form.js`)
 
-Purpose:
+**Purpose**
 
 - Client-side form validation
-- User feedback
 
-Behavior:
+**Behavior**
 
 - Field-level validation
 - Inline error messages
 - Success message handling
 
-Requirements:
+---
 
-- `.lib-contact`
-- `.lib-contact-field`
-- `.lib-contact-error`
-- `.lib-contact-success`
+## HTML Templates
+
+LibreCSS includes **ready-to-use HTML templates**:
+
+- Landing page
+- Component showcase
+- Image gallery with lightbox
+- Contact form integration
+
+Templates are fully wired with CSS and JavaScript and can be used as a starting point for real projects.
+
+---
+
+## Server-Side Mailer
+
+LibreCSS includes a **simple PHP-based mailer** for the contact form.
+
+**Features**
+
+- Server-side email sending
+- Minimal configuration
+- Works with the included contact form
+- No framework dependencies
+
+**Location**
+
+```
+server/mailer.php
+```
+
+---
 
 ## Design Tokens
 
-All tokens are defined in `:root` inside **base.css**.
+All design tokens live in `:root` inside `base.css`.
+
+---
 
 ### Typography
 
@@ -209,8 +222,9 @@ All tokens are defined in `:root` inside **base.css**.
 --lib-line-tight
 --lib-line-normal
 --lib-line-relaxed
-
 ```
+
+---
 
 ### Spacing
 
@@ -223,24 +237,13 @@ All tokens are defined in `:root` inside **base.css**.
 --lib-space-xl
 --lib-space-2xl
 --lib-space-3xl
-
 ```
 
-### Border Radius
-
-```
---lib-radius-xs
---lib-radius-sm
---lib-radius-md
---lib-radius-lg
---lib-radius-xl
---lib-radius-full
-
-```
+---
 
 ### Colors
 
-```
+```javascript
 --lib-color-bg
 --lib-color-surface
 --lib-color-surface-alt
@@ -249,7 +252,6 @@ All tokens are defined in `:root` inside **base.css**.
 --lib-color-text-muted
 
 --lib-color-primary
---lib-color-primary-strong
 --lib-color-primary-dark
 --lib-color-primary-soft
 --lib-color-primary-contrast
@@ -257,49 +259,8 @@ All tokens are defined in `:root` inside **base.css**.
 --lib-color-border
 --lib-color-border-subtle
 --lib-color-danger
-
 ```
 
-### Shadows
+---
 
-```
---lib-shadow-sm
---lib-shadow-md
---lib-shadow-focus
-
-```
-
-### Transitions
-
-```
---lib-transition-fast
---lib-transition-normal
-
-```
-
-### Layout
-
-```
---lib-max-width
---lib-container-padding-x
---lib-navbar-offset
-```
-
-## Best Practices
-
-- Never hardcode values if a token exists
-- Box-based components use `space-lg` padding
-- Vertical spacing is controlled by `.lib-section`
-- Components should not redefine tokens
-- Prefer consistency over cleverness
-
-## Extending LibreCSS
-
-When adding new components:
-
-1. Use existing tokens
-2. Check base/helpers before adding new styles
-3. Avoid global overrides
-4. Keep the system predictable
-
-LibreCSS is designed to stay small, readable, and reliable — even as it grows.
+**LibreCSS is designed to stay small, readable, and practical — even as your project grows.**
