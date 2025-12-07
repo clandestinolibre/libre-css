@@ -16,7 +16,7 @@ if (!$input || !is_array($input)) {
 	http_response_code(400);
 	echo json_encode([
 		"success" => false,
-		"error" => "Ungültiges Anfrageformat (JSON erwartet).",
+		"error" => "Invalid request format (JSON expected).",
 	]);
 	exit();
 }
@@ -31,23 +31,23 @@ $turnstile = trim($input["turnstile"] ?? "");
 $errors = [];
 
 if (strlen($name) < 2) {
-	$errors["name"] = "Bitte einen gültigen Namen eingeben.";
+	$errors["name"] = "Please enter a valid name.";
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-	$errors["email"] = "Bitte eine gültige E-Mail-Adresse angeben.";
+	$errors["email"] = "Please enter a valid email address.";
 }
 
 if (strlen($message) < 10) {
-	$errors["message"] = "Die Nachricht muss mindestens 10 Zeichen enthalten.";
+	$errors["message"] = "The message must contain at least 10 characters.";
 }
 
 if ($privacy !== "yes") {
-	$errors["privacy"] = "Bitte akzeptieren Sie die Datenschutzerklärung.";
+	$errors["privacy"] = "Please accept the privacy policy.";
 }
 
 if (!$turnstile) {
-	$errors["turnstile"] = "Ungültige Captcha-Bestätigung.";
+	$errors["turnstile"] = "Invalid captcha verification.";
 }
 
 if (!empty($errors)) {
@@ -57,12 +57,12 @@ if (!empty($errors)) {
 }
 
 
-$secretKey = "HIER_DEIN_TURNSTILE_SECRET_KEY_EINTRAGEN";
+$secretKey = "ENTER_YOUR_TURNSTILE_SECRET_KEY_HERE";
 
-if ($secretKey === "HIER_DEIN_TURNSTILE_SECRET_KEY_EINTRAGEN") {
+if ($secretKey === "ENTER_YOUR_TURNSTILE_SECRET_KEY_HERE") {
 	echo json_encode([
 		"success" => false,
-		"error" => "Turnstile Secret Key fehlt.",
+		"error" => "Turnstile Secret Key is missing.",
 	]);
 	exit();
 }
@@ -93,7 +93,7 @@ if (!($verification["success"] ?? false)) {
 	http_response_code(400);
 	echo json_encode([
 		"success" => false,
-		"error" => "Captcha-Verifikation fehlgeschlagen.",
+		"error" => "Captcha verification failed.",
 		"details" => $verification,
 	]);
 	exit();
@@ -111,14 +111,14 @@ $mail = new PHPMailer(true);
 try {
 
 	$mail->isSMTP();
-	$mail->Host = "smtp.DEINE-DOMAIN.de";
+	$mail->Host = "smtp.YOUR-DOMAIN.com";
 	$mail->SMTPAuth = true;
 	$mail->Username = "[email protected]";
-	$mail->Password = "SMTP_PASSWORT";
+	$mail->Password = "SMTP_PASSWORD";
 	$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 	$mail->Port = 587;
 
-	$mail->setFrom("[email protected]", "Website Kontaktformular");
+	$mail->setFrom("[email protected]", "Website Contact Form");
 	$mail->addAddress("[email protected]", "Admin");
 	$mail->addReplyTo($email, $name);
 
@@ -131,7 +131,7 @@ try {
 
           <tr>
             <td style="text-align:center; background:#0f172a; color:white; border-radius:8px 8px 0 0;">
-              <h2 style="margin:0; padding:10px 0;">Neue Kontaktanfrage</h2>
+              <h2 style="margin:0; padding:10px 0;">New website contact message</h2>
             </td>
           </tr>
 
@@ -140,13 +140,13 @@ try {
               <p><strong>Name:</strong> ' .
 		$name .
 		'</p>
-              <p><strong>E-Mail:</strong> ' .
+              <p><strong>email:</strong> ' .
 		$email .
 		'</p>
-              <p><strong>Telefon:</strong> ' .
+              <p><strong>Phone:</strong> ' .
 		$phone .
 		'</p>
-              <p><strong>Nachricht:</strong><br><br>' .
+              <p><strong>Message:</strong><br><br>' .
 		nl2br(htmlspecialchars($message)) .
 		'</p>
             </td>
@@ -154,8 +154,8 @@ try {
 
           <tr>
             <td style="font-size:12px; color:#666; text-align:center;">
-              Diese E-Mail wurde automatisch über das Kontaktformular deiner Website gesendet.
-            </td>
+		This email was sent automatically via the contact form on your website.
+		</td>
           </tr>
 
         </table>
@@ -163,7 +163,7 @@ try {
     </table>';
 
 	$mail->isHTML(true);
-	$mail->Subject = "Neue Kontaktanfrage von $name";
+	$mail->Subject = "New conact request from $name";
 	$mail->Body = $htmlMessage;
 
 	$mail->send();
@@ -175,7 +175,7 @@ try {
 	http_response_code(500);
 	echo json_encode([
 		"success" => false,
-		"error" => "Mailversand fehlgeschlagen.",
+		"error" => "Email delivery failed.",
 		"details" => $mail->ErrorInfo,
 	]);
 	exit();

@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	fields.name.addEventListener("input", () => {
 		fields.name.value.trim().length < 2
-			? showError(fields.name, "Bitte einen gültigen Namen eingeben.")
+			? showError(fields.name, "Please enter a valid name.")
 			: clearError(fields.name);
 	});
 
 	fields.email.addEventListener("input", () => {
 		const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value);
 		!valid
-			? showError(fields.email, "Bitte eine gültige E-Mail eingeben.")
+			? showError(fields.email, "Please enter a valid email address.")
 			: clearError(fields.email);
 	});
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		fields.message.value.trim().length < 10
 			? showError(
 				fields.message,
-				"Bitte eine Nachricht (mind. 10 Zeichen) eingeben.",
+				"The message must contain at least 10 characters.",
 			)
 			: clearError(fields.message);
 	});
@@ -61,25 +61,25 @@ document.addEventListener("DOMContentLoaded", () => {
 		let valid = true;
 
 		if (fields.name.value.trim().length < 2) {
-			showError(fields.name, "Bitte einen gültigen Namen eingeben.");
+			showError(fields.name, "Please enter a valid name.");
 			valid = false;
 		}
 
 		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value)) {
-			showError(fields.email, "Bitte eine gültige E-Mail eingeben.");
+			showError(fields.email, "Please enter a valid email address.");
 			valid = false;
 		}
 
 		if (fields.message.value.trim().length < 10) {
 			showError(
 				fields.message,
-				"Bitte eine Nachricht (mind. 10 Zeichen) eingeben.",
+				"The message must contain at least 10 characters.",
 			);
 			valid = false;
 		}
 
 		if (!fields.privacy.checked) {
-			alert("Bitte akzeptieren Sie die Datenschutzerklärung.");
+			alert("Please accept the privacy policy.");
 			valid = false;
 		}
 
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			'input[name="cf-turnstile-response"]',
 		)?.value;
 		if (!turnstileToken) {
-			alert("Bitte Captcha bestätigen.");
+			alert("Invalid captcha verification.");
 			valid = false;
 		}
 
@@ -116,10 +116,10 @@ document.addEventListener("DOMContentLoaded", () => {
 				form.reset();
 				turnstile.reset();
 			} else {
-				alert(result.error || "Fehler beim Absenden.");
+				alert(result.error || "Error while sending.");
 			}
 		} catch (err) {
-			alert("Serverfehler: " + err.message);
+			alert("Server error: " + err.message);
 		}
 	});
 });

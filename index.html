@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8" />
@@ -14,10 +14,11 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/librecss-favicon-32.png" />
 	<link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon/librecss-favicon-512.png" />
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/librecss-favicon-180.png" />
-	<title>LibreCSS</title>
+	<title>LibreCSS Website Template</title>
 </head>
 
 <body>
+	<!-- Header with navigation -->
 	<header class="lib-navbar">
 		<div class="lib-container lib-navbar-inner">
 			<a href="index.html" class="lib-navbar-brand">
@@ -25,7 +26,7 @@
 				<span class="lib-navbar-title">LibreCSS</span>
 			</a>
 
-			<button class="lib-navbar-toggle" aria-label="Navigation öffnen">
+			<button class="lib-navbar-toggle" aria-label="Open navigation">
 				<span></span><span></span><span></span>
 			</button>
 
@@ -35,17 +36,20 @@
 			</nav>
 		</div>
 	</header>
+	<!-- Hero section -->
 	<section class="lib-hero" data-component="hero" style="
                 --lib-hero-image: url(&quot;/assets/img/default/hero.jpg&quot;);
             ">
 		<div class="lib-hero-overlay">
 			<div class="lib-hero-inner">
-				<h1>Willkommen auf unserer Website</h1>
-				<a role="button" href="#welcome">Mehr erfahren</a>
+				<h1>Welcome to our LibreCSS Template</h1>
+				<a role="button" href="#welcome">Find out more</a>
 			</div>
 		</div>
 	</section>
+	<!-- Main container with a simple grid -->
 	<main class="lib-container">
+		<!-- One column -->
 		<section class="lib-section" id="welcome">
 			<h2 class="lib-text-center">Headline</h2>
 			<p>
@@ -56,6 +60,7 @@
 				duis convallis tempus leo eu aenean.
 			</p>
 		</section>
+		<!-- Two columns -->
 		<section class="lib-section">
 			<div class="lib-grid">
 				<div>
@@ -78,51 +83,53 @@
 					</p>
 				</div>
 				<div>
-					<img src="assets/img/gallery/img1.png" alt="Beispielbild" />
+					<img src="assets/img/gallery/img1.png" alt="Example image" />
 				</div>
 			</div>
 		</section>
+		<!-- Three columns -->
 		<section class="lib-section">
 			<div class="lib-grid">
 				<div>
-					<h3 class="lib-text-center">Komponente A</h3>
+					<h3 class="lib-text-center">First row</h3>
 					<p>Ein modulares UI-Element…</p>
 				</div>
 				<div>
-					<h3 class="lib-text-center">Komponente B</h3>
+					<h3 class="lib-text-center">Second row</h3>
 					<p>Perfekt für Medien…</p>
 				</div>
 				<div>
-					<h3 class="lib-text-center">Komponente C</h3>
+					<h3 class="lib-text-center">Third row</h3>
 					<p>Leicht erweiterbar…</p>
 				</div>
 			</div>
 		</section>
+		<!-- Contact form -->
 		<section id="contact" class="lib-section">
 			<div class="lib-container">
 				<h2 class="lib-text-center">Kontakt</h2>
 				<form id="contactForm" class="lib-contact">
 					<div class="lib-contact-field">
 						<label for="cf-name">Name</label>
-						<input type="text" id="cf-name" name="name" placeholder="Ihr Name"
+						<input type="text" id="cf-name" name="name" placeholder="Your name"
 							required />
 						<small class="lib-contact-error"></small>
 					</div>
 					<div class="lib-contact-field">
 						<label for="cf-email">E-Mail-Adresse</label>
 						<input type="email" id="cf-email" name="email"
-							placeholder="Ihre E-Mail-Adresse" required />
+							placeholder="Your email address" required />
 						<small class="lib-contact-error"></small>
 					</div>
 					<div class="lib-contact-field">
 						<label for="cf-phone">Telefonnummer</label>
 						<input type="tel" id="cf-phone" name="phone"
-							placeholder="Ihre Telefonnummer" />
+							placeholder="Your phone number" />
 						<small class="lib-contact-error"></small>
 					</div>
 					<div class="lib-contact-field">
 						<label for="cf-message">Ihre Nachricht</label>
-						<textarea id="cf-message" name="message" placeholder="Ihre Nachricht..."
+						<textarea id="cf-message" name="message" placeholder="Your message..."
 							required></textarea>
 						<small class="lib-contact-error"></small>
 					</div>
@@ -130,32 +137,32 @@
 					<small class="lib-contact-error"></small>
 					<label class="lib-checkbox">
 						<input type="checkbox" id="cf-privacy" name="privacy" required />
-						<span>Ich habe die
-							<a href="/datenschutz.html"
-								target="_blank">Datenschutzerklärung</a>
-							gelesen und akzeptiere sie.</span>
+						<span>I have read the
+							<a href="/dataprivacy.html" target="_blank">Data Privacy</a>
+							and accept it.</span>
 					</label>
 					<button type="submit" id="cf-submit">
-						Nachricht senden
+						Send message
 					</button>
 					<p class="lib-contact-success" id="cf-success">
-						Ihre Nachricht wurde erfolgreich gesendet.
+						Your message has been sent successfully
 					</p>
 				</form>
 			</div>
 		</section>
 	</main>
-	<footer class="lib-footer lib-footer-dark">
-		<div class="lib-container lib-footer-inner">
-			<small>
-				© 2025 LibreCSS ·
-				<a href="/imprint.html">Imprint</a> ·
-				<a href="/dataprivacy.html">Data Privacy</a>
-			</small>
-		</div>
-	</footer>
-	<script type="module" src="assets/js/loader.js"></script>
-	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+	<! -- Footer -->
+		<footer class="lib-footer lib-footer-dark">
+			<div class="lib-container lib-footer-inner">
+				<small>
+					© 2025 LibreCSS ·
+					<a href="/imprint.html">Imprint</a> ·
+					<a href="/dataprivacy.html">Data Privacy</a>
+				</small>
+			</div>
+		</footer>
+		<script type="module" src="assets/js/loader.js"></script>
+		<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 
 </html>
