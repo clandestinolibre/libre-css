@@ -1,17 +1,15 @@
 # LibreCSS
 
-LibreCSS is a **lightweight website template** designed to help you build modern websites quickly — without build tools, frameworks, or external dependencies.
+LibreCSS is a lightweight website template designed to help you build modern websites quickly — without build tools, frameworks, or external dependencies.
 
 It combines:
 
-- a **component-based CSS framework**
-- a **small JavaScript utility library** for common browser features
-- **ready-to-use HTML templates**
-- a **simple PHP-based mailer** for the contact form
+- a component-based CSS framework
+- a small JavaScript utility library for common browser features
+- ready-to-use HTML templates
+- a simple PHP-based mailer for the contact form
 
 Everything is designed to be minimal, predictable, and easy to extend.
-
----
 
 ## Philosophy
 
@@ -22,13 +20,9 @@ Everything is designed to be minimal, predictable, and easy to extend.
 - Offline-ready (local fonts, no CDNs)  
 - Predictable behavior, no magic  
 
----
-
 ## CSS Framework
 
-LibreCSS ships with a **small, token-based CSS framework**.
-
----
+LibreCSS ships with a small, token-based CSS framework.
 
 ### Base Layer (`base.css`)
 
@@ -40,14 +34,12 @@ The base layer defines:
 - Forms and buttons
 - Core layout primitives
 
----
-
 #### Typography
 
-LibreCSS uses **local fonts only**:
+LibreCSS uses local fonts only:
 
-- **Sans-serif:** Liberation Sans  
-- **Monospace:** Liberation Mono  
+- Sans-serif: Liberation Sans  
+- Monospace: Liberation Mono  
 
 ```css
 body {
@@ -60,11 +52,9 @@ pre {
 }
 ```
 
----
-
 ### Helpers (`helpers.css`)
 
-Helpers are intentionally kept **very small** and are only added when they remove real duplication.
+Helpers are intentionally kept very small and are only added when they remove real duplication.
 
 Currently included helpers:
 
@@ -73,8 +63,6 @@ Currently included helpers:
 - `.lib-text-right`
 - `.lib-text-justify`
 
----
-
 ### Layout Primitives
 
 - `.lib-container` – max-width layout container
@@ -82,8 +70,6 @@ Currently included helpers:
 - `.lib-grid` – responsive auto-fit grid
 
 These primitives are reused across all templates and components.
-
----
 
 ## Components
 
@@ -106,14 +92,10 @@ Each component:
 </div>
 ```
 
----
-
 ## JavaScript Library
 
-LibreCSS includes a **small JavaScript library** for essential browser features.
+LibreCSS includes a small JavaScript library for essential browser features.
 JavaScript is optional and only used where needed.
-
----
 
 ### General Rules
 
@@ -121,8 +103,6 @@ JavaScript is optional and only used where needed.
 - No inline styles
 - Stable, CSS-first class names
 - JavaScript controls behavior, not layout
-
----
 
 ### Navbar (`navbar.js`)
 
@@ -135,8 +115,6 @@ JavaScript is optional and only used where needed.
 
 - Toggles `.active` on mobile navigation
 - Adds `.scrolled` / `.shrink` classes based on scroll position
-
----
 
 ### Lightbox (`lightbox.js`)
 
@@ -151,8 +129,6 @@ JavaScript is optional and only used where needed.
 - Keyboard support (ESC, arrow keys)
 - Click on backdrop closes the lightbox
 
----
-
 ### Contact Form (`contact-form.js`)
 
 **Purpose**
@@ -165,11 +141,9 @@ JavaScript is optional and only used where needed.
 - Inline error messages
 - Success message handling
 
----
-
 ## HTML Templates
 
-LibreCSS includes **ready-to-use HTML templates**:
+LibreCSS includes ready-to-use HTML templates:
 
 - Landing page
 - Component showcase
@@ -178,11 +152,9 @@ LibreCSS includes **ready-to-use HTML templates**:
 
 Templates are fully wired with CSS and JavaScript and can be used as a starting point for real projects.
 
----
-
 ## Server-Side Mailer
 
-LibreCSS includes a **simple PHP-based mailer** for the contact form.
+LibreCSS includes a simple PHP-based mailer for the contact form.
 
 **Features**
 
@@ -197,13 +169,9 @@ LibreCSS includes a **simple PHP-based mailer** for the contact form.
 server/mailer.php
 ```
 
----
-
 ## Design Tokens
 
 All design tokens live in `:root` inside `base.css`.
-
----
 
 ### Typography
 
@@ -224,8 +192,6 @@ All design tokens live in `:root` inside `base.css`.
 --lib-line-relaxed
 ```
 
----
-
 ### Spacing
 
 ```
@@ -239,11 +205,9 @@ All design tokens live in `:root` inside `base.css`.
 --lib-space-3xl
 ```
 
----
-
 ### Colors
 
-```javascript
+```
 --lib-color-bg
 --lib-color-surface
 --lib-color-surface-alt
@@ -261,6 +225,4 @@ All design tokens live in `:root` inside `base.css`.
 --lib-color-danger
 ```
 
----
-
-**LibreCSS is designed to stay small, readable, and practical — even as your project grows.**
+LibreCSS is designed to stay small, readable, and practical — even as your project grows.
