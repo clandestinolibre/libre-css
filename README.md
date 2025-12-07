@@ -226,3 +226,5 @@ All design tokens live in `:root` inside `base.css`.
 ```
 
 LibreCSS is designed to stay small, readable, and practical — even as your project grows.
+
+Credits: The hero-image is using a photo from Joseph Gonzalez on Unsplash.
